@@ -1,0 +1,75 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.sc2022.tarea1;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Usuario
+ */
+public class Tarea1 {
+
+    public static void main(String[] args) {
+        Recursivo rec = new Recursivo();
+        int op = 0;
+        int num=0;
+        String cantidad_dig="0";
+        int digito=4;
+        
+        do{
+            op = Integer.parseInt(JOptionPane.showInputDialog("*Elige una opción a trabajar:*\n1.  Invertir las cifras\n2. letra por letra\n3. Llenar vector y mostrar el mayor\n4. Sumar varios numeros\n5. Tablas de multiplicar\n6. Sumar digitos\n7. Salir"));
+            
+            switch (op){
+                
+                case 1:{
+                    while(digito>3 ||digito<=0){
+                       num = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número que quiera invertir *el máximo de dígitos es 3* "));
+                       cantidad_dig = String.valueOf(num);
+                       digito= (char)cantidad_dig.length();  
+                    }
+                     int num2=rec.invertir(num,digito);
+                    System.out.print("El numero invertido es: "+num2);
+                    digito=4;
+                    break;
+                }
+                case 2:{         
+                    System.out.print("hello");
+                    break;
+                }
+                case 3:{
+                    System.out.print("hello");
+                    break;
+                }
+                case 4:{
+                    System.out.print("hello");
+                    break;
+                }
+                case 5:{
+                    System.out.print("hello");
+                    break;
+                }
+                case 6:{
+                    System.out.print("hello");
+                    break;
+                }
+                case 7:{
+                    System.exit(0);
+                    break;
+                }
+                default:{
+                    JOptionPane.showMessageDialog(null, "Disculpe ingrese un digito valido", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    Tarea1.main(new String[]{});
+                    break;
+                }
+                
+            }
+        }
+        while (op != 7);
+        JOptionPane.showMessageDialog(null, "Gracias por usar el programa", "ERROR", JOptionPane.CLOSED_OPTION);
+           
+        }
+
+
+}
