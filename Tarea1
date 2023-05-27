@@ -17,6 +17,8 @@ public class Tarea1 {
         int num=0;
         String cantidad_dig="0";
         int digito=4;
+        char letra=0;
+        int num2=0;
         
         do{
             op = Integer.parseInt(JOptionPane.showInputDialog("*Elige una opción a trabajar:*\n1.  Invertir las cifras\n2. letra por letra\n3. Llenar vector y mostrar el mayor\n4. Sumar varios numeros\n5. Tablas de multiplicar\n6. Sumar digitos\n7. Salir"));
@@ -24,34 +26,65 @@ public class Tarea1 {
             switch (op){
                 
                 case 1:{
+                    digito=4;
+                    System.out.print("\n*** 1.INVERTIR LAS CIFRAS ***\n");
                     while(digito>3 ||digito<=0){
                        num = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número que quiera invertir *el máximo de dígitos es 3* "));
                        cantidad_dig = String.valueOf(num);
                        digito= (char)cantidad_dig.length();  
                     }
-                     int num2=rec.invertir(num,digito);
-                    System.out.print("El numero invertido es: "+num2);
-                    digito=4;
+                    digito--;
+                     num2=rec.invertir(num,digito);
+                     
+                    System.out.print("El numero invertido es: "+num2+"\n");
+                    
                     break;
                 }
                 case 2:{         
-                    System.out.print("hello");
+                    System.out.print("\n*** 1.LETRA POR LETRA ***\n");
+                    String frase =JOptionPane.showInputDialog("Ingrese la palabra o parrafo que desea visualizar letra por letra");
+                    digito=0;
+                    rec.letraxletra(letra,digito,frase);
                     break;
                 }
                 case 3:{
-                    System.out.print("hello");
+                    System.out.print("\n*** 3.LLENAR VECTOR Y MOSTRAR EL MAYOR ***\n");
+                    num = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de elementos que desea en el vector"));
+                    int [] vect=new int[num];
+                    num=0;
+                    rec.llenarVector(vect, num);
+                    System.out.print("\n- Datos del vector\n");
+                    num=0;
+                    rec.mostrarVector(vect, num);
+                    System.out.print("\n- Mayor valor almacenado\n");
+                    num=0;
+                    digito=0;
+                    digito=rec.mayorVector(vect, num,digito);
+                    System.out.print(digito);
                     break;
                 }
                 case 4:{
-                    System.out.print("hello");
+                    System.out.print("\n*** 4.SUMAR VARIOS NÚMEROS ***\n");
+                    num = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de números que desea sumar"));
+                    digito=0;
+                    digito=rec.Nnumeros(num,digito);
+                    System.out.print("-La suma total es: "+digito);
                     break;
                 }
                 case 5:{
-                    System.out.print("hello");
+                    System.out.print("\n*** 5.TABLAS DE MULTIPLICAR ***\n");
+                    num = Integer.parseInt(JOptionPane.showInputDialog("Dijite el número de la tabla de multiplicar que desea visualizar"));
+                    digito=0;
+                    rec.tablas(num2,digito,num);
                     break;
                 }
                 case 6:{
-                    System.out.print("hello");
+                    System.out.print("\n*** 4.SUMAR DIGITOS ***\n");
+                    num = Integer.parseInt(JOptionPane.showInputDialog("Dijite un número"));
+                    digito=0;
+                    num2=num;
+                    digito=rec.Sumadig(num, num2, digito);
+                    System.out.print("-La suma total es: "+digito);
                     break;
                 }
                 case 7:{
